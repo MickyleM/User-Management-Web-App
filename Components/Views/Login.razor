@@ -1,0 +1,50 @@
+﻿@page "/login"
+@rendermode InteractiveServer
+@using Microsoft.EntityFrameworkCore
+@using BlazorApp.Services
+@layout EmptyLayout
+@inject NavigationManager Navigation
+@inject AppDbContext DbContext
+@inject AuthService AuthService
+
+<PageTitle>Login</PageTitle>
+
+<div class="login-wrapper">
+    <div class="login-card">
+        <h2>JCF Member System</h2>
+        <p class="subtitle">Sign in to continue</p>
+
+        <label>Username</label>
+        <input type="text" value=@username @oninput="e => username = e.Value.ToString()" placeholder="Username"/>
+        <label>Password</label>
+        <input type="password" value=@password @oninput="e => password = e.Value.ToString()" placeholder="Password"/>
+
+        <a @onclick="GoToReset" class="forgot">Forgot Password?</a>
+        <button type="button" @onclick="HandleLogin">Sign In</button>
+        @if(showError){
+            <div class="error-msg">Invalid username or password</div>
+        }
+    </div>
+</div>
+
+@code{
+    private string username;
+    private string password;
+    private bool showError = false;
+
+    private async Task HandleLogin(){
+        var user = await DbContext.Users.FirstOrDefaultAsync(u => u.userName == username);
+
+        if(user == null || !BCrypt.Net.BCrypt.Verify(password, user.pword)){
+            showError = true;
+            return;
+        }
+
+       AuthService.Login(user);
+       Navigation.NavigateTo("/");
+    }
+
+    private void GoToReset(){
+        Navigation.NavigateTo("/reset-password");
+    }
+}
