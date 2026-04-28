@@ -39,7 +39,7 @@
             return;
         }
 
-       AuthService.Login(user.userName);
+       AuthService.Login(user.userID, user.userName);
        Navigation.NavigateTo("/");
     }
 

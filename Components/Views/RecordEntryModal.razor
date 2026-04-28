@@ -1,6 +1,6 @@
 ﻿@using BlazorApp.Services
 @using Microsoft.EntityFrameworkCore
-@inject AppDbContext AppDbContext
+@inject AppDbContext DbContext
 @inject AuthService AuthService
 
 @if(IsVisible){
@@ -79,6 +79,17 @@
             showError = true;
             return;
         }
+
+        model.termDate = DateOnly.Parse(terminationDate);
+        model.createdOn = DateOnly.FromDateTime(DateTime.Today);
+        model.createdBy = AuthService.CurrentUserId;
+
+        DbContext.ExMembers.Add(model);
+        await DbContext.SaveChangesAsync();
+
+        model = new();
+        await OnSave.InvokeAsync();
+        await OnClose.InvokeAsync();
     }
 
     private async Task Close(){

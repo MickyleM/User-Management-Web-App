@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 public class ExMember
 {
     public int Id { get; set; }
@@ -10,6 +12,7 @@ public class ExMember
     public string termReason { get; set; }
     public string forceOrdersNum { get; set; }
     public int createdBy { get; set; }
+    [ForeignKey("createdBy")]
     public User User { get; set; }
     public DateOnly createdOn { get; set; }
 }
