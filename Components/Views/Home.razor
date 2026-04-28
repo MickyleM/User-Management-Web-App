@@ -1,17 +1,27 @@
 ﻿@page "/"
 @using BlazorApp.Services
+@using Microsoft.AspNetCore.Authentication
 @inject NavigationManager Navigation
 @inject AuthService AuthService
 
-@code{
-    protected override void OnInitialized(){
-        if(!AuthService.isLoggedIn)
-            Navigation.NavigateTo("/login");
+<PageTitle>Dashboard</PageTitle>
+
+<h1>Welcome back, @AuthService.CurrentUser</h1>
+
+<button type="button" @onclick="()=> showModal = true">Enter new record</button>
+<RecordEntryModal IsVisible="showModal" OnClose="()=> showModal = false" OnSave="RefreshRecords"></RecordEntryModal>
+
+@code {
+    protected override void OnInitialized()
+    {
+       if(!AuthService.IsLoggedIn) 
+        Navigation.NavigateTo("/login");
+    }
+
+    private bool showModal = false;
+
+    private void RefreshRecords()
+    {
+
     }
 }
-
-<PageTitle>Home</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.

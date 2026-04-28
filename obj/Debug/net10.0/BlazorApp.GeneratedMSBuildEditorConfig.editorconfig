@@ -42,10 +42,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mitch/OneDrive/Desktop/BlazorApp/BlazorApp/Components/Views/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xDb3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/mitch/OneDrive/Desktop/BlazorApp/BlazorApp/Components/Views/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,8 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xOb3RGb3VuZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mitch/OneDrive/Desktop/BlazorApp/BlazorApp/Components/Views/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xXZWF0aGVyLnJhem9y
+[C:/Users/mitch/OneDrive/Desktop/BlazorApp/BlazorApp/Components/Views/RecordEntryModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xSZWNvcmRFbnRyeU1vZGFsLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mitch/OneDrive/Desktop/BlazorApp/BlazorApp/Components/_Imports.razor]

@@ -1,5 +1,4 @@
 ﻿@page "/login"
-@rendermode InteractiveServer
 @using Microsoft.EntityFrameworkCore
 @using BlazorApp.Services
 @layout EmptyLayout
@@ -40,7 +39,7 @@
             return;
         }
 
-       AuthService.Login(user);
+       AuthService.Login(user.userName);
        Navigation.NavigateTo("/");
     }
 
