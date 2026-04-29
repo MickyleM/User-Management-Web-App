@@ -23,7 +23,6 @@ c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\Components\Layout\ReconnectModal.razor.rz.scp.css
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\bundle\BlazorApp.styles.css
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\scopedcss\projectbundle\BlazorApp.bundle.scp.css
-c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\hh92lrx13d-{0}-khy4lop6wu-khy4lop6wu.gz
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\v7vyzcc6qh-{0}-bqjiyaj88i-bqjiyaj88i.gz
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\m5e6rnmcep-{0}-c2jlpeoesf-c2jlpeoesf.gz
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\o0q64zz2g2-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -212,3 +211,5 @@ C:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\bin\Debug\net10.0\runtimes\w
 C:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\BlazorApp.csproj.Up2Date
 C:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 c:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\bin\Debug\net10.0\BCrypt.Net-Next.dll
+C:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\BlazorApp.sourcelink.json
+C:\Users\mitch\OneDrive\Desktop\BlazorApp\BlazorApp\obj\Debug\net10.0\compressed\hh92lrx13d-{0}-wy195f7hv3-wy195f7hv3.gz

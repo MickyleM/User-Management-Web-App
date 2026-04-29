@@ -14,10 +14,6 @@
 
             <div class="modal-body">
                 <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label>Name</label>
-                        <input type="text" @oninput="e=> model.name = e.Value.ToString()" placeholder="John Doe"/>
-                    </div>
                     <div class="form-group">
                         <label>Constable Number</label>
                         <input type="text" @oninput="e=> model.consNum = int.Parse(e.Value.ToString())" placeholder="e.g. 1234"/>
@@ -34,7 +30,11 @@
                         <label>Rank</label>
                         <input type="text" @oninput="e=> model.rank = e.Value.ToString()" placeholder="Constable"/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group full-width">
+                        <label>Name</label>
+                        <input type="text" @oninput="e => model.name = e.Value.ToString()" placeholder="John Doe" />
+                    </div>
+                    <div class="form-group full-width">
                         <label>Last Division</label>
                         <input type="text" @oninput="e=> model.lastDiv = e.Value.ToString()" placeholder="Division"/>
                     </div>
@@ -42,7 +42,7 @@
                         <label>Termination Reason</label>
                         <input type="text" @oninput="e => model.termReason = e.Value.ToString()" placeholder="Reason for termination" />
                     </div>
-                    <div class="form-group">
+                    <div class="form-group full-width">
                         <label>Force Orders Number</label>
                         <input type="text" @oninput="e => model.forceOrdersNum = e.Value.ToString()" placeholder="0000X" />
                     </div>
@@ -74,7 +74,10 @@
 
     private async Task HandleSubmit()
     {
-        if (string.IsNullOrEmpty(model.name))
+        if (string.IsNullOrEmpty(model.name) || (string.IsNullOrEmpty(model.regNum))
+        || (string.IsNullOrEmpty(model.rank)) || (string.IsNullOrEmpty(model.lastDiv))
+        || (string.IsNullOrEmpty(model.termReason)) || (string.IsNullOrEmpty(model.forceOrdersNum))
+        || (string.IsNullOrEmpty(terminationDate)) || (model.consNum == 0))
         {
             showError = true;
             return;
@@ -90,11 +93,15 @@
         model = new();
         await OnSave.InvokeAsync();
         await OnClose.InvokeAsync();
+
+        AuthService.ResetTimer();
     }
 
     private async Task Close(){
         showError = false;
         model = new();
         await OnClose.InvokeAsync();
+
+        AuthService.ResetTimer();
     }
 }

@@ -58,3 +58,82 @@ h1:focus {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
+table{
+    margin-top: 8px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td{
+    border: 2px solid black;
+}
+
+th, td{
+    padding: 8px;
+    text-align: left;
+}
+
+.modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-card{
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 540px;
+    padding: 1.5rem;
+}
+
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.modal-footer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 1rem;
+    border-top: 2px solid #eee;
+    padding-top: 1rem;
+}
+
+.form-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label{
+    font-size: 12px;
+    color: #666;
+}
+
+.form-group input{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.full-width{
+    grid-column: span 2;
+}
+
+.error-msg{
+    color: red;
+}
