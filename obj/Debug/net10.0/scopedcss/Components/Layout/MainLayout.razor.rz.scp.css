@@ -96,3 +96,7 @@ main[b-qgsvw684bo] {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.logout[b-qgsvw684bo]{
+    cursor: pointer;
+}

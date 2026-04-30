@@ -97,6 +97,10 @@ main[b-qgsvw684bo] {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+.logout[b-qgsvw684bo]{
+    cursor: pointer;
+}
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-g8o6n169oq] {
     appearance: none;
