@@ -9,20 +9,39 @@
 <PageTitle>Login</PageTitle>
 
 <div class="login-wrapper">
-    <div class="login-card">
-        <h2>JCF Member System</h2>
-        <p class="subtitle">Sign in to continue</p>
+    <div class="login-container">
+        <div class="login-brand">
+            <div class="login-brand-icon">
+                <svg width="24" height="24" viewbox="0 0 24 24" fill="white">
+                    <path
+                    d="M12 2C9.24 2 7 4.24 7 7C7 9.76 9.24 12 12 12C14.76 12 17 9.76 17 7C17 4.24 14.76 2 12 2ZM12 14C8.67 14 2 15.67 2 19V21H22V19C22 15.67 15.33 14 12 14Z" />
+                </svg>
+            </div>
+            <h2>JCF Member System</h2>
+            <p class="subtitle">Sign in to continue</p>
+        </div>
 
-        <label>Username</label>
-        <input type="text" value=@username @oninput="e => username = e.Value.ToString()" placeholder="Username"/>
-        <label>Password</label>
-        <input type="password" value=@password @oninput="e => password = e.Value.ToString()" placeholder="Password"/>
+        <div class="login-card">
+            <label>Username</label>
+            <input type="text" value=@username @oninput="e => username = e.Value.ToString()"
+                   placeholder="Enter your username" @onkeydown="HandleKeyDown"/>
+            <label>Password</label>
+            <input type="password" value=@password @oninput="e => password = e.Value.ToString()"
+                   placeholder="Enter your password" @onkeydown="HandleKeyDown" />
 
-        <a @onclick="GoToReset" class="forgot">Forgot Password?</a>
-        <button type="button" @onclick="HandleLogin">Sign In</button>
-        @if(showError){
-            <div class="error-msg">Invalid username or password</div>
-        }
+            <a @onclick="() => showModal = true" class="forgot"><span>Forgot Password?</span></a>
+            @if(showModal)
+            {
+                <ResetPasswordModal IsVisible=showModal OnClose="() => showModal = false"/>
+            }
+            <button type="button" class="sign-in" @onclick="HandleLogin">Sign In</button>
+            @if (showError)
+            {
+                <div class="error-msg">Invalid username or password</div>
+            }
+        </div>
+
+        <div class="login-footer">Jamaica Constabulary Force &mdash; Authorized access only</div>
     </div>
 </div>
 
@@ -30,6 +49,7 @@
     private string username;
     private string password;
     private bool showError = false;
+    private bool showModal = false;
 
     private async Task HandleLogin(){
         var user = await DbContext.Users.FirstOrDefaultAsync(u => u.userName == username);
@@ -43,7 +63,14 @@
        Navigation.NavigateTo("/");
     }
 
-    private void GoToReset(){
-        Navigation.NavigateTo("/reset-password");
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if(e.Key == "Enter"){
+            await HandleLogin();
+        }
     }
+
+    @* private void GoToReset(){
+        showModal = true;
+    } *@
 }

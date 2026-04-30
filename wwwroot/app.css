@@ -73,6 +73,23 @@ th, td{
     padding: 8px;
     text-align: left;
 }
+.reset-modal{
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.reset-card {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem;
+}
 
 .modal-overlay{
     position: fixed;
@@ -135,5 +152,114 @@ th, td{
 }
 
 .error-msg{
-    color: red;
+    color: #A32D2D;
+    margin-top: 1rem;
+    padding: 10px 12px;
+    background: #FCEBEB;
+    border: 1px solid #F09595;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.login-wrapper{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    padding: 2rem;
+}
+
+.login-container{
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-brand{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-brand-icon{
+    width: 48px;
+    height: 48px;
+    background:#185FA5;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.login-brand h2{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.login-brand p{
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.login-card{
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+
+.login-card-label{
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 6px;
+    letter-spacing: 0.05rem;
+}
+
+.login-card input{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.forgot{
+    display: block;
+    text-align: right;
+    font-size: 13px;
+    color: #185FA5;
+    text-decoration: none;
+    margin-bottom: 1.25rem;
+}
+
+.forgot span{
+    cursor: pointer;
+}
+
+.sign-in{
+    width: 100%;
+    padding: 10px;
+    background: #185FA5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.login-footer{
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 1.5rem;
+}
+
+.reset-footer{
+    /* justify-content: space-between; */
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding-top: 0.05rem;
 }

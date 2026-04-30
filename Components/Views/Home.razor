@@ -8,40 +8,44 @@
 
 <PageTitle>Dashboard</PageTitle>
 
-<h1>Welcome back, @(char.ToUpper(AuthService.CurrentUser[0]) + AuthService.CurrentUser.Substring(1))</h1>
+@if(AuthService.IsLoggedIn)
+{
+    <h1>Welcome back, @(char.ToUpper(AuthService.CurrentUser[0]) + AuthService.CurrentUser.Substring(1))</h1>
 
-<button type="button" @onclick="() => showModal = true">Enter new record</button>
-<RecordEntryModal IsVisible="showModal" OnClose="() => showModal = false" OnSave="RefreshRecords"></RecordEntryModal>
-
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Registration No.</th>
-            <th>Constable No.</th>
-            <th>Rank</th>
-            <th>Last Division</th>
-            <th>Force Orders No.</th>
-            <th>Termination Reason</th>
-            <th>Termination Date</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach(var record in records)
-        {
+    <button type="button" @onclick="() => showModal = true">Enter new record</button>
+    <RecordEntryModal IsVisible="showModal" OnClose="() => showModal = false" OnSave="RefreshRecords"/>
+}
+<div class="data">
+    <table>
+        <thead>
             <tr>
-                <td>@record.name</td>
-                <td>@record.regNum</td>
-                <td>@record.consNum</td>
-                <td>@record.rank</td>
-                <td>@record.lastDiv</td>
-                <td>@record.forceOrdersNum</td>
-                <td>@record.termReason</td>
-                <td>@record.termDate.ToString("dd-MMM-yy")</td>
+                <th>Name</th>
+                <th>Registration No.</th>
+                <th>Constable No.</th>
+                <th>Rank</th>
+                <th>Last Division</th>
+                <th>Force Orders No.</th>
+                <th>Termination Reason</th>
+                <th>Termination Date</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var record in records)
+            {
+                <tr>
+                    <td>@record.name</td>
+                    <td>@record.regNum</td>
+                    <td>@record.consNum</td>
+                    <td>@record.rank</td>
+                    <td>@record.lastDiv</td>
+                    <td>@record.forceOrdersNum</td>
+                    <td>@record.termReason</td>
+                    <td>@record.termDate.ToString("dd-MMM-yy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
 @code {
     private bool showModal = false;
