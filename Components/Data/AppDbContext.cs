@@ -8,6 +8,8 @@ public class AppDbContext : DbContext
     public DbSet<User> Users {get; set; }
     public DbSet<ExMember> ExMembers {get; set; }
 
+    public DbSet<SecurityQuestions> SecurityQuestions { get; set; }
+
     // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     // {
     //     optionsBuilder.UseSqlServer("Server=localhost;Database=JCFMembers;Trusted_Connection=True;TrustServerCertificate=True;");
